@@ -10,12 +10,6 @@ public final class Task7 {
     private Task7() {
     }
 
-//    public static void main(String[] args) throws WrongInputException {
-//        LOGGER.info(rotateRight(8, 1)); // 4, 1000 -> 0100
-//        LOGGER.info(rotateLeft(16, 1)); // 1, 10000 -> 00001
-//        LOGGER.info(rotateLeft(17, 2)); // 6, 10001 -> 00110
-//    }
-
     /**
      * Циклический сдвиг влево
      *

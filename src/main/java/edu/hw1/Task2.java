@@ -9,12 +9,6 @@ public final class Task2 {
     private Task2() {
     }
 
-//    public static void main(String[] args) {
-//        LOGGER.info(countDigits(4666)); // 4
-//        LOGGER.info(countDigits(544)); // 3
-//        LOGGER.info(countDigits(0)); // 1
-//    }
-
     /**
      * Напишите функцию, которая возвращает количество цифр в десятичной форме числа.
      * Пользоваться преобразованием в строку запрещено.

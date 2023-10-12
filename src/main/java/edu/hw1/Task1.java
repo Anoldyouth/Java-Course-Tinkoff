@@ -12,12 +12,6 @@ public final class Task1 {
     private Task1() {
     }
 
-//    public static void main(String[] args) {
-//        LOGGER.info(minutesToSeconds("01:00")); // 60
-//        LOGGER.info(minutesToSeconds("13:56")); // 836
-//        LOGGER.info(minutesToSeconds("10:60")); // -1
-//    }
-
     /**
      * Дана строка с длиной видео в формате mm:ss, например 12:44.<p>
      * Напишите функцию, которая возвращает общую длину видео в секундах.

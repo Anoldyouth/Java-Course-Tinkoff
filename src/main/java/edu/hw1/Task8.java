@@ -7,46 +7,10 @@ import org.apache.logging.log4j.Logger;
 public final class Task8 {
     private final static Logger LOGGER = LogManager.getLogger();
     private final static int[][] STATES = {{-1, -2}, {-1, 2}, {1, -2}, {1, 2}, {-2, -1}, {-2, 1}, {2, -1}, {2, 1}};
-
-    private final static int MIN_BOARD_CELL_NUMBER = 0;
-    private final static int MAX_BOARD_CELL_NUMBER = 7;
     private final static int SIZE = 8;
 
     private Task8() {
     }
-
-//    public static void main(String[] args) throws WrongInputException {
-//        LOGGER.info(knightBoardCapture(new int[][] {
-//            {0, 0, 0, 1, 0, 0, 0, 0},
-//            {0, 0, 0, 0, 0, 0, 0, 0},
-//            {0, 1, 0, 0, 0, 1, 0, 0},
-//            {0, 0, 0, 0, 1, 0, 1, 0},
-//            {0, 1, 0, 0, 0, 1, 0, 0},
-//            {0, 0, 0, 0, 0, 0, 0, 0},
-//            {0, 1, 0, 0, 0, 0, 0, 1},
-//            {0, 0, 0, 0, 1, 0, 0, 0}
-//        })); // true
-//        LOGGER.info(knightBoardCapture(new int[][] {
-//            {1, 0, 1, 0, 1, 0, 1, 0},
-//            {0, 1, 0, 1, 0, 1, 0, 1},
-//            {0, 0, 0, 0, 1, 0, 1, 0},
-//            {0, 0, 1, 0, 0, 1, 0, 1},
-//            {1, 0, 0, 0, 1, 0, 1, 0},
-//            {0, 0, 0, 0, 0, 1, 0, 1},
-//            {1, 0, 0, 0, 1, 0, 1, 0},
-//            {0, 0, 0, 1, 0, 1, 0, 1}
-//        })); // false
-//        LOGGER.info(knightBoardCapture(new int[][] {
-//            {0, 0, 0, 0, 1, 0, 0, 0},
-//            {0, 0, 0, 0, 0, 1, 0, 0},
-//            {0, 0, 0, 1, 0, 0, 0, 0},
-//            {1, 0, 0, 0, 0, 0, 0, 0},
-//            {0, 0, 0, 0, 1, 0, 0, 0},
-//            {0, 0, 0, 0, 0, 1, 0, 0},
-//            {0, 0, 0, 0, 0, 1, 0, 0},
-//            {1, 0, 0, 0, 0, 0, 0, 0}
-//        })); // false
-//    }
 
     /**
      * Напишите функцию, которая возвращает true, если кони расставлены на шахматной доске так,
@@ -54,43 +18,70 @@ public final class Task8 {
      *
      * @param board доска с конями
      * @return флаг о том, что ни один конь не может захватить другого коня
+     * @throws WrongInputException ошибка при неверных параметрах длины и ширины доски
      */
     public static boolean knightBoardCapture(int[][] board) throws WrongInputException {
-        int x;
-        int y;
+        checkInput(board);
 
-        if (board.length != SIZE) {
-            throw new WrongInputException();
-        }
+        for (int i = 0; i < SIZE; i++) {
 
-        for (int i = MIN_BOARD_CELL_NUMBER; i < MAX_BOARD_CELL_NUMBER; i++) {
-            if (board[i].length != SIZE) {
-                throw new WrongInputException();
-            }
-
-            for (int j = MIN_BOARD_CELL_NUMBER; j < MAX_BOARD_CELL_NUMBER; j++) {
+            for (int j = 0; j < SIZE; j++) {
                 if (board[i][j] != 1) {
                     continue;
                 }
 
-                for (int[] pair : STATES) {
-                    x = j + pair[1];
-                    y = i + pair[0];
-
-                    if (x < MIN_BOARD_CELL_NUMBER
-                        || x > MAX_BOARD_CELL_NUMBER
-                        || y < MIN_BOARD_CELL_NUMBER
-                        || y > MAX_BOARD_CELL_NUMBER) {
-                        continue;
-                    }
-
-                    if (board[x][y] == 1) {
-                        return false;
-                    }
+                if (isCaptured(board, j, i)) {
+                    return false;
                 }
             }
         }
 
         return true;
+    }
+
+    /**
+     * Валидация размеров доски
+     *
+     * @param board доска с конями
+     * @throws WrongInputException ошибка при неверных параметрах длины и ширины доски
+     */
+    private static void checkInput(int[][] board) throws WrongInputException {
+        if (board.length != SIZE) {
+            throw new WrongInputException();
+        }
+
+        for (int i = 0; i < SIZE; i++) {
+            if (board[i].length != SIZE) {
+                throw new WrongInputException();
+            }
+        }
+    }
+
+    /**
+     * Проверка на то, что конь не захвачен
+     *
+     * @param board доска с конями
+     * @param x0 текущая координата по x
+     * @param y0 текущая координата по y
+     * @return является ли конь захваченным другой фигурой
+     */
+    private static boolean isCaptured(int[][] board, int x0, int y0) {
+        int x;
+        int y;
+
+        for (int[] pair : STATES) {
+            x = x0 + pair[1];
+            y = y0 + pair[0];
+
+            if (x < 0 || x > SIZE - 1 || y < 0 || y > SIZE - 1) {
+                continue;
+            }
+
+            if (board[x][y] == 1) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

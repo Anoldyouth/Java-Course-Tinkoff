@@ -17,12 +17,6 @@ public final class Task6 {
     private Task6() {
     }
 
-//    public static void main(String[] args) throws WrongInputException {
-//        LOGGER.info(countK(6621)); // 5
-//        LOGGER.info(countK(6554)); // 4
-//        LOGGER.info(countK(1234)); // 3
-//    }
-
     /**
      * Выберем любое четырёхзначное число n, больше 1000, в котором не все цифры одинаковы. <p>
      * 1. Расположим цифры сначала в порядке возрастания, затем в порядке убывания. <p>

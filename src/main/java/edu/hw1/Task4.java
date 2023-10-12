@@ -9,12 +9,6 @@ public final class Task4 {
     private Task4() {
     }
 
-//    public static void main(String[] args) {
-//        LOGGER.info(fixString("123456")); // "214365"
-//        LOGGER.info(fixString("hTsii  s aimex dpus rtni.g")); // "This is a mixed up string."
-//        LOGGER.info(fixString("badce")); // "abcde"
-//    }
-
     /**
      * Все мои строки перепутались и каждая пара символов поменялась местами.<p>
      * Напишите функцию, которая исправляет такие строки и возвращает правильный порядок.

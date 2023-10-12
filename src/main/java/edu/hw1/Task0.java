@@ -9,10 +9,6 @@ public final class Task0 {
     private Task0() {
     }
 
-//    public static void main(String[] args) {
-//        helloWorld();
-//    }
-
     /** Напишите функцию, которая выводит в консоль фразу "Привет, мир!" при помощи метода LOGGER.info(). */
     public static void helloWorld() {
         LOGGER.info("Hello world!");

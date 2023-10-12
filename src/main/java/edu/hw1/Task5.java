@@ -12,14 +12,6 @@ public final class Task5 {
     private Task5() {
     }
 
-//    public static void main(String[] args) throws Exception {
-//        LOGGER.info(isPalindromeDescendant(11211230)); // true, 11211230 -> 2333 -> 56 -> 11
-//        LOGGER.info(isPalindromeDescendant(13001120)); // true, 13001120 -> 4022 ➞ 44
-//        LOGGER.info(isPalindromeDescendant(23336014)); // true, 23336014 -> 5665
-//        LOGGER.info(isPalindromeDescendant(11)); // true
-//        LOGGER.info(isPalindromeDescendant(12345)); // false, 12345 -> 159 -> 114 -> 15 -> 6
-//    }
-
     /**
      * Будем называть потомком числа новое число, которое создается путем суммирования каждой пары соседних цифр. <p>
      * Напишите функцию, которая будет возвращать true,

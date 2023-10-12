@@ -2,6 +2,9 @@ package edu.hw1;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -22,13 +25,11 @@ public class Task1Test {
         assertThat(answer).isEqualTo(-1);
     }
 
-    @Test
+    @ParameterizedTest
+    @ValueSource(strings = {"1:59", "9999:59"})
     @DisplayName("Можно вводить в минуты сколь угодно большое число")
-    void anyMinutes() {
-        int firstAnswer = Task1.minutesToSeconds("1:59");
-        assertThat(firstAnswer).isNotEqualTo(-1);
-
-        int secondAnswer = Task1.minutesToSeconds("9999:59");
-        assertThat(secondAnswer).isNotEqualTo(-1);
+    void anyMinutes(String time) {
+        int answer = Task1.minutesToSeconds(time);
+        assertThat(answer).isNotEqualTo(-1);
     }
 }
