@@ -1,7 +1,10 @@
 package edu.project1;
 
+import edu.hw1.Exceptions.WrongInputException;
+import edu.hw1.Task8;
 import edu.project1.dictionary.Dictionary;
 import edu.project1.dictionary.FileDictionary;
+import edu.project1.exceptions.ShortWordException;
 import edu.project1.guess_results.*;
 import nl.altindag.log.LogCaptor;
 import org.junit.jupiter.api.DisplayName;
@@ -17,6 +20,7 @@ import java.util.Arrays;
 import java.util.Formatter;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 public class ConsoleHangmanUnitTest {
@@ -162,5 +166,24 @@ public class ConsoleHangmanUnitTest {
 
             verify(mocked[0]).giveUp();
         }
+    }
+
+    @Test
+    @DisplayName("Проверка длины слова")
+    void wordLength() throws Exception {
+        Dictionary dictionary = mock(FileDictionary.class);
+        when(dictionary.randomWord()).thenReturn("wd");
+
+        String input = "exit\n";
+        ByteArrayInputStream inputStream = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inputStream);
+
+        ConsoleHangman hangman = new ConsoleHangman(dictionary, 1);
+        ShortWordException thrown = assertThrows(
+                ShortWordException.class,
+                hangman::run
+        );
+
+        assertThat(thrown).isNotNull();
     }
 }
