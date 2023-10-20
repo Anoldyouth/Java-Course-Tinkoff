@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 class ConsoleHangman {
     private final static Logger LOGGER = LogManager.getLogger();
-    private final static Scanner SCANNER = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
     private final static int MAX_WORD_LENGTH = 4;
     private final Dictionary dictionary;
     private final int maxAttempts;
@@ -31,7 +31,7 @@ class ConsoleHangman {
 
         while (true) {
             LOGGER.info("Input guess: ");
-            input = SCANNER.nextLine();
+            input = scanner.nextLine();
 
             if (input.equals("exit")) {
                 result = session.giveUp();
