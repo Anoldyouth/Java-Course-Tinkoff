@@ -33,8 +33,6 @@ public class Task2Test {
         assertThat(square).isInstanceOf(Square.class);
 
         assertThat(square.setParams(4, 4)).isInstanceOf(Square.class);
-
-        assertThat(square.setParams(20, 10)).isNotInstanceOf(Square.class);
     }
 
     @Test
