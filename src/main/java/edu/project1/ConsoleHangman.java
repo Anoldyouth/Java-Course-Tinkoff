@@ -26,6 +26,11 @@ class ConsoleHangman {
     public void run() throws Exception {
         LOGGER.info("Game is started!");
         Session session = sessionSetup();
+
+        game(session);
+    }
+
+    private void game(Session session) {
         String input;
         GuessResult result;
 
