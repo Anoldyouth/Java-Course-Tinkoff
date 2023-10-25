@@ -1,8 +1,8 @@
 package edu.hw2.Task3;
 
-import edu.hw2.Task3.exceptions.ConnectionException;
 import edu.hw2.Task3.Interfaces.Connection;
 import edu.hw2.Task3.Interfaces.ConnectionManager;
+import edu.hw2.Task3.exceptions.ConnectionException;
 
 public final class PopularCommandExecutor {
     /** менеджер получения соединения */
