@@ -25,8 +25,8 @@ public class Task2Test {
     }
 
     @Test
-    @DisplayName("Проверка принадлежности классу")
-    void instanceOf()
+    @DisplayName("Проверка принадлежности классу квадрата")
+    void instanceOfSquare()
     {
         Square square = new Square(2);
 
@@ -35,5 +35,13 @@ public class Task2Test {
         assertThat(square.setParams(4, 4)).isInstanceOf(Square.class);
 
         assertThat(square.setParams(20, 10)).isNotInstanceOf(Square.class);
+    }
+
+    @Test
+    @DisplayName("Проверка принадлежности классу прямоугольника")
+    void instanceOfRectangle() {
+        Square square = new Square(2);
+
+        assertThat(square.setParams(20, 10)).isNotInstanceOf(Square.class).isInstanceOf(Rectangle.class);
     }
 }

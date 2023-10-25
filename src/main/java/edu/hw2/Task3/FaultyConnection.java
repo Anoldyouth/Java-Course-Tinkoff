@@ -1,6 +1,6 @@
 package edu.hw2.Task3;
 
-import edu.hw2.Exceptions.ConnectionException;
+import edu.hw2.Task3.exceptions.ConnectionException;
 import edu.hw2.Task3.Interfaces.Connection;
 import java.util.Random;
 import org.apache.logging.log4j.LogManager;
