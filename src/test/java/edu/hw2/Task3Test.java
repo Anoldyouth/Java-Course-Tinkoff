@@ -1,21 +1,22 @@
 package edu.hw2;
 
-import edu.hw2.Task3.exceptions.ConnectionException;
 import edu.hw2.Task3.DefaultConnectionManager;
 import edu.hw2.Task3.FaultyConnection;
 import edu.hw2.Task3.FaultyConnectionManager;
 import edu.hw2.Task3.Interfaces.ConnectionManager;
 import edu.hw2.Task3.PopularCommandExecutor;
+import edu.hw2.Task3.exceptions.ConnectionException;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
-
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.doCallRealMethod;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 
 public class Task3Test {

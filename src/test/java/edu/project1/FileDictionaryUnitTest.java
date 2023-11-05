@@ -4,11 +4,10 @@ import edu.project1.dictionary.Dictionary;
 import edu.project1.dictionary.FileDictionary;
 import edu.project1.exceptions.EmptyFileException;
 import edu.project1.exceptions.OpeningFileException;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 public class FileDictionaryUnitTest {
     @Test

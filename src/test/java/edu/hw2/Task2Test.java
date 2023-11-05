@@ -2,12 +2,12 @@ package edu.hw2;
 
 import edu.hw2.Task2.Rectangle;
 import edu.hw2.Task2.Square;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Task2Test {
     static Arguments[] rectangles() {

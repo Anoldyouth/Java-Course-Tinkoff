@@ -1,12 +1,20 @@
 package edu.project1;
 
-import edu.hw1.Exceptions.WrongInputException;
-import edu.hw1.Task8;
 import edu.project1.dictionary.Dictionary;
 import edu.project1.dictionary.FileDictionary;
 import edu.project1.exceptions.ShortWordException;
-import edu.project1.guess_results.*;
+import edu.project1.guess_results.Defeat;
+import edu.project1.guess_results.FailedGuess;
+import edu.project1.guess_results.GuessResult;
+import edu.project1.guess_results.RepeatedGuess;
+import edu.project1.guess_results.SuccessfulGuess;
+import edu.project1.guess_results.Win;
+import java.io.ByteArrayInputStream;
+import java.util.Arrays;
+import java.util.Formatter;
 import nl.altindag.log.LogCaptor;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,14 +22,9 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.MockedConstruction;
 import org.mockito.Mockito;
-
-import java.io.ByteArrayInputStream;
-import java.util.Arrays;
-import java.util.Formatter;
-
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class ConsoleHangmanUnitTest {
     private static String stringBuilder(int errors, int maxErrors, String state) {
