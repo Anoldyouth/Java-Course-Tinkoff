@@ -9,7 +9,7 @@ public class BackwardIterator<T> implements Iterator<T> {
     private int currentIndex;
 
     public BackwardIterator(List<T> list) {
-        this.list = list;
+        this.list = List.copyOf(list);
         this.currentIndex = list.size();
     }
 
