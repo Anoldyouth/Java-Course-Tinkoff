@@ -46,8 +46,8 @@ public class Methods {
 
         return animals.stream()
                 .sorted((animal1, animal2) -> animal2.weight() - animal1.weight())
-                .toList()
-                .subList(0, count);
+                .limit(count)
+                .toList();
     }
 
     /**
