@@ -1,9 +1,14 @@
 package edu.project1;
 
-import edu.project1.guess_results.*;
+import edu.project1.guess_results.Defeat;
+import edu.project1.guess_results.FailedGuess;
+import edu.project1.guess_results.GuessResult;
+import edu.project1.guess_results.RepeatedGuess;
+import edu.project1.guess_results.SuccessfulGuess;
+import edu.project1.guess_results.Win;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class SessionUnitTest {
     @Test
