@@ -15,7 +15,7 @@ public class GlobFilter implements AbstractFilter {
      * @param extension искомый формат файла
      */
     public GlobFilter(@NotNull String extension) {
-        pathMatcher = FileSystems.getDefault().getPathMatcher("glob:*.txt");
+        pathMatcher = FileSystems.getDefault().getPathMatcher("glob:" + extension);
     }
 
     /**
