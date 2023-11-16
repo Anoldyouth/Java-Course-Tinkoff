@@ -16,12 +16,15 @@ public class LogsParser {
     private final static String DATE_TIME_PATTERN = "dd/MMM/yyyy:HH:mm:ss xxxx";
     private static String generatedPattern = null;
 
+    private LogsParser() {}
+
     /**
      * Генератор паттерна логов для матчера.
      * Генерирует один раз, далее отдает сгенерированный
      *
      * @return паттерн
      */
+    @SuppressWarnings("checkstyle:MultipleStringLiterals")
     private static String generateLogPattern() {
         if (generatedPattern != null) {
             return generatedPattern;
@@ -58,7 +61,8 @@ public class LogsParser {
      * @param logString входная строка логов
      * @return токены строки; если строка представлена не в верном формате, возвращает null
      */
-    public static LogString parseString(@NotNull String logString) {
+    @SuppressWarnings("checkstyle:MagicNumber")
+    public static LogString parseString(@NotNull String logString, String source) {
         Matcher matcher = Pattern.compile(generateLogPattern()).matcher(logString);
 
         if (!matcher.find()) {
@@ -66,6 +70,7 @@ public class LogsParser {
         }
 
         return new LogString(
+                source,
                 matcher.group(1),
                 matcher.group(2),
                 LocalDateTime.from(DateTimeFormatter
