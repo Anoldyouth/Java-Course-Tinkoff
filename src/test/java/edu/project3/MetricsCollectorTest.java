@@ -72,8 +72,6 @@ public class MetricsCollectorTest {
         collector.collect(second);
 
         Metrics metrics = collector.getMetrics();
-        System.out.println(MetricsToString.markdown(metrics));
-        System.out.println(MetricsToString.adoc(metrics));
 
         assertThat(metrics.files()).isEqualTo(Set.of("source 1", "source 2"));
         assertThat(metrics.from()).isEqualTo(datetimeFirst);
