@@ -21,6 +21,8 @@ import java.util.stream.Stream;
 import static java.net.http.HttpClient.newHttpClient;
 
 public class LogsReader {
+    private final static int OK = 200;
+
     private LogsReader() {}
 
     public static Stream<LogString> readLogsFromUrl(String url) {
@@ -33,7 +35,7 @@ public class LogsReader {
             var response = newHttpClient()
                     .send(request, HttpResponse.BodyHandlers.ofString());
 
-            if (response.statusCode() != 200) {
+            if (response.statusCode() != OK) {
                 return Stream.empty();
             }
 
