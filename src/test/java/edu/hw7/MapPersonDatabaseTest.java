@@ -1,6 +1,7 @@
 package edu.hw7;
 
 import edu.hw7.factories.PersonFactory;
+import static java.lang.Thread.sleep;
 import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
@@ -43,7 +44,7 @@ public class MapPersonDatabaseTest {
         MapPersonDatabase db = new MapPersonDatabase();
         SearchByName firstSearch = new SearchByName("test");
         SearchByName secondSearch = new SearchByName("test");
-        int count = 100_000;
+        int count = 1_000_000;
 
         for (int i = 1; i <= count; i++) {
             db.add(PersonFactory.newFactory().withId(i).withName("test").make());
@@ -54,6 +55,7 @@ public class MapPersonDatabaseTest {
         thread.start();
 
         assertThat(thread.isAlive()).isTrue();
+        sleep(1000);
         db.add(needToAdd);
         assertThat(thread.isAlive()).isFalse();
 
