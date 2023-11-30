@@ -20,7 +20,7 @@ public class PropertiesDictionary implements Dictionary {
         try (FileInputStream fis = new FileInputStream(DICTIONARY_PROPERTIES)) {
             properties.load(fis);
 
-            properties.forEach((key, value) -> dictionary.put((String) key,(String) value));
+            properties.forEach((key, value) -> dictionary.put((String) key, (String) value));
         } catch (IOException ignored) {
         }
     }
@@ -35,7 +35,7 @@ public class PropertiesDictionary implements Dictionary {
         try (FileInputStream fis = new FileInputStream(propertiesFile)) {
             properties.load(fis);
 
-            properties.forEach((key, value) -> dictionary.put((String) key,(String) value));
+            properties.forEach((key, value) -> dictionary.put((String) key, (String) value));
         } catch (IOException ignored) {
         }
     }

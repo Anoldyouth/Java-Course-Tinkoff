@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 public class DictionaryClient implements AutoCloseable {
     private final static Logger LOGGER = LogManager.getLogger();
+    private final static int BUF_SIZE = 1024;
     private final Socket socket;
     private final InputStream inputStream;
     private final OutputStream outputStream;
@@ -36,7 +37,7 @@ public class DictionaryClient implements AutoCloseable {
         try {
             outputStream.write((keyword + "\n").getBytes());
 
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[BUF_SIZE];
             int bytesRead = inputStream.read(buffer);
             return new String(buffer, 0, bytesRead);
 
