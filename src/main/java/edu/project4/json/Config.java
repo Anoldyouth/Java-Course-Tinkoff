@@ -1,8 +1,8 @@
 package edu.project4.json;
 
 import edu.project4.ImageFormat;
-import edu.project4.transformations.TransformationsEnum;
 import edu.project4.transformations.Transformation;
+import edu.project4.transformations.TransformationsEnum;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;

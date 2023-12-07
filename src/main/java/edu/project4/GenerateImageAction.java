@@ -129,10 +129,6 @@ public class GenerateImageAction {
             throw new IllegalArgumentException("Неверное количество случайных преобразований");
         }
 
-        if (config.getRandomAffineTransformationsCount() < 0) {
-            throw new IllegalArgumentException("Неверное количество случайных преобразований");
-        }
-
         if (config.getRandomAffineTransformationsCount() == 0 && config.getPresetAffineTransformations().length == 0) {
             throw new IllegalArgumentException("Отсутствуют линейные преобразования");
         }
