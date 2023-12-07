@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class FileStructureHelper {
+    private FileStructureHelper() {}
 
     public static void createStructure(String directory) throws Exception {
         deleteDirectory(new File(directory));
