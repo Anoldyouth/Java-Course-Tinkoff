@@ -1,0 +1,66 @@
+{
+  "height": 1080,
+  "width": 1920,
+  "xMin": -1.77,
+  "xMax": 1.77,
+  "yMin": -1,
+  "yMax": 1,
+  "threadsCount": 6,
+  "samples": 340,
+  "iterations": 80000,
+  "randomAffineTransformationsCount": 3,
+  "presetAffineTransformations": [
+    {
+      "a": -0.695157,
+      "b": 0.00633793,
+      "c": 0,
+      "d": -0.616063,
+      "e": 0.517523,
+      "f": 0,
+      "red": 152,
+      "green": 37,
+      "blue": 52
+    },
+    {
+      "a": 0.546215,
+      "b": 0.155182,
+      "c": -0.626195,
+      "d": -0.16815,
+      "e": 0.64548,
+      "f": 0.56566,
+      "red": 75,
+      "green": 156,
+      "blue": 25
+    },
+    {
+      "a": -0.695157,
+      "b": 0.00633793,
+      "c": 0,
+      "d": -0.616063,
+      "e": 0.517523,
+      "f": 0,
+      "red": 152,
+      "green": 37,
+      "blue": 52
+    },
+    {
+      "a": -0.26516,
+      "b": 0.56498462,
+      "c": -0.13151,
+      "d": 0.468485,
+      "e": 0.9876541,
+      "f": -0.634864,
+      "red": 69,
+      "green": 25,
+      "blue": 175
+    }
+  ],
+  "nonlinearTransformations": [
+    "HORSESHOE",
+    "CYLINDER"
+  ],
+  "directory": "./images",
+  "fileType": "BMP",
+  "withCorrection": null,
+  "gamma": -2.2
+}
