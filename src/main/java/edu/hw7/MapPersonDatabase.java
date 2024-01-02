@@ -8,8 +8,8 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class MapPersonDatabase implements PersonDatabase {
-    private final static Map<Integer, Person> MAP = new HashMap<>();
-    private final static ReadWriteLock READ_WRITE_LOCK = new ReentrantReadWriteLock();
+    private static final Map<Integer, Person> MAP = new HashMap<>();
+    private static final ReadWriteLock READ_WRITE_LOCK = new ReentrantReadWriteLock();
 
     /**
      * Добавление человека в список

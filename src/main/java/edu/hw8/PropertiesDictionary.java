@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Properties;
 
 public class PropertiesDictionary implements Dictionary {
-    private final static String DICTIONARY_PROPERTIES = "src/main/resources/dictionary.properties";
+    private static final String DICTIONARY_PROPERTIES = "src/main/resources/dictionary.properties";
     private final Map<String, String> dictionary;
 
     /**

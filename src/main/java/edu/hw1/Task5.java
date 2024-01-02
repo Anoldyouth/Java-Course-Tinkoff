@@ -5,9 +5,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public final class Task5 {
-    private final static Logger LOGGER = LogManager.getLogger();
-    private final static int ZERO = 0;
-    private final static int MIN_TWO_DIGITS = 10;
+    private static final Logger LOGGER = LogManager.getLogger();
+    private static final int ZERO = 0;
+    private static final int MIN_TWO_DIGITS = 10;
 
     private Task5() {
     }

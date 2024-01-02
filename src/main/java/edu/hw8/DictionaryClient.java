@@ -8,22 +8,18 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class DictionaryClient implements AutoCloseable {
-    private final static Logger LOGGER = LogManager.getLogger();
-    private final static int BUF_SIZE = 1024;
+    private static final Logger LOGGER = LogManager.getLogger();
+    private static final int BUF_SIZE = 1024;
     private final Socket socket;
     private final InputStream inputStream;
     private final OutputStream outputStream;
 
     @Override
-    public void close() throws Exception {
-        try {
+    public void close() {
+        try (inputStream; outputStream; socket) {
             socket.getOutputStream().write("exit\n".getBytes());
         } catch (IOException e) {
             LOGGER.error(e.getMessage());
-        } finally {
-            inputStream.close();
-            outputStream.close();
-            socket.close();
         }
     }
 

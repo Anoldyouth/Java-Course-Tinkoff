@@ -12,8 +12,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class DictionaryServer {
-    private final static Logger LOGGER = LogManager.getLogger();
-    public final static String NOT_FOUND = "Извините, цитата по Вашему запросу не найдена";
+    public static final String NOT_FOUND = "Извините, цитата по Вашему запросу не найдена";
+    private static final Logger LOGGER = LogManager.getLogger();
     private final Dictionary dictionary;
     private final int maxConnections;
     private final int port;

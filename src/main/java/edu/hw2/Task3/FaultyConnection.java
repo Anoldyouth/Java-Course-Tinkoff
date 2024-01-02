@@ -8,9 +8,9 @@ import org.apache.logging.log4j.Logger;
 
 public class FaultyConnection implements Connection {
     /** верхняя граница генерации числа */
-    public final static int UPPERBOUND = 5;
+    public static final int UPPERBOUND = 5;
     /** логгер */
-    private final static Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger();
 
     /**
      * Функция выполнения команды

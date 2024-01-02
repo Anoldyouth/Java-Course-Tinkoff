@@ -10,10 +10,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class DictionaryClientServerTest {
-    private final static String DIRECTORY = "test_dictionary_client_server";
-    private final static String PROPERTIES = "test.properties";
-    private final static String KEY = "test";
-    private final static String VALUE = "test message";
+    private static final String DIRECTORY = "test_dictionary_client_server";
+    private static final String PROPERTIES = "test.properties";
+    private static final String KEY = "test";
+    private static final String VALUE = "test message";
 
     @BeforeAll
     static void prepare() throws Exception {
@@ -50,6 +50,7 @@ public class DictionaryClientServerTest {
 
     @Test
     void waiting() throws Exception {
+        // given
         Thread serverThread = new Thread(() -> {
             DictionaryServer server = new DictionaryServer(1, 8081, Path.of(DIRECTORY, PROPERTIES).toString());
             server.serve();
@@ -77,6 +78,7 @@ public class DictionaryClientServerTest {
                 }
             });
 
+            // when
             clientThread.start();
 
             sleep(500);
@@ -85,8 +87,10 @@ public class DictionaryClientServerTest {
 
             sleep(1000);
 
+            // then
             assertThat(waitingThread.isAlive()).isTrue();
 
+            // clear after all
             clientThread.interrupt();
             waitingThread.interrupt();
         }

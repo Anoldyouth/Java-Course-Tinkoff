@@ -5,9 +5,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public final class Task8 {
-    private final static Logger LOGGER = LogManager.getLogger();
-    private final static int[][] STATES = {{-1, -2}, {-1, 2}, {1, -2}, {1, 2}, {-2, -1}, {-2, 1}, {2, -1}, {2, 1}};
-    private final static int SIZE = 8;
+    private static final Logger LOGGER = LogManager.getLogger();
+    private static final int[][] STATES = {{-1, -2}, {-1, 2}, {1, -2}, {1, 2}, {-2, -1}, {-2, 1}, {2, -1}, {2, 1}};
+    private static final int SIZE = 8;
 
     private Task8() {
     }

@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class DefaultConnectionManager implements ConnectionManager {
     /** Верхняя граница при генерации числа */
-    private final static int UPPERBOUND = 5;
+    private static final int UPPERBOUND = 5;
 
     /**
      * Функция, возвращающая соединение

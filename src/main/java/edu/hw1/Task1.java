@@ -6,8 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public final class Task1 {
-    private final static Logger LOGGER = LogManager.getLogger();
-    private final static int SECONDS = 60;
+    private static final Logger LOGGER = LogManager.getLogger();
+    private static final int SECONDS = 60;
 
     private Task1() {
     }
