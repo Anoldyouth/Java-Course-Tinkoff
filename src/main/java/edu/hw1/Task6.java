@@ -6,13 +6,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public final class Task6 {
-    private final static Logger LOGGER = LogManager.getLogger();
-    private final static int MIN_FOUR_DIGITS_NUMBER = 1000;
-    private final static int MAX_FOUR_DIGITS_NUMBER = 9999;
-    private final static int KAPREKAR_NUMBER = 6174;
-    private final static int DIGITS_NUMBER = 4;
-    private final static int DIGIT = 10;
-    private final static int[] ALL_NUMBERS_REPEATING = {1111, 2222, 3333, 4444, 5555, 6666, 7777, 8888, 9999};
+    private static final Logger LOGGER = LogManager.getLogger();
+    private static final int MIN_FOUR_DIGITS_NUMBER = 1000;
+    private static final int MAX_FOUR_DIGITS_NUMBER = 9999;
+    private static final int KAPREKAR_NUMBER = 6174;
+    private static final int DIGITS_NUMBER = 4;
+    private static final int DIGIT = 10;
+    private static final int[] ALL_NUMBERS_REPEATING = {1111, 2222, 3333, 4444, 5555, 6666, 7777, 8888, 9999};
 
     private Task6() {
     }

@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 public class StableConnection implements Connection {
     /** логгер */
-    private final static Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger();
 
     /**
      * Функция выполнения команды

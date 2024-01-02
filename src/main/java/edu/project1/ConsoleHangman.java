@@ -12,9 +12,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 class ConsoleHangman {
-    private final static Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger();
     private final Scanner scanner = new Scanner(System.in);
-    private final static int MAX_WORD_LENGTH = 4;
+    private static final int MAX_WORD_LENGTH = 4;
     private final Dictionary dictionary;
     private final int maxAttempts;
 
